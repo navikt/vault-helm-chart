@@ -28,7 +28,7 @@ spec:
       restartPolicy: Never
       containers:
       - name: {{ template "fullname" . }}-{{.Values.Consul.PreInstall.ComponentName}}
-        image: "{{.Values.Misc.kubectl.Image}}:{{.Values.Misc.kubectl.ImageTag}}"
+        image: "{{.Values.Misc.Kubectl.Image}}:{{.Values.Misc.Kubectl.ImageTag}}"
         imagePullPolicy: "Always"
         env:
           - name: FULL_NAME

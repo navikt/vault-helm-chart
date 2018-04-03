@@ -71,7 +71,7 @@ Vault:
   # HostAliases:
   # - ip: "127.0.0.1"
   #   hostnames:
-  #   - "foo.local"  
+  #   - "foo.local"
   DisableConsulRegistration: "false"
   DefaultLeaseTtl: "768h"
   MaxLeaseTtl: "768h"
@@ -100,12 +100,12 @@ Vault:
     Replicas: 1
     HttpPort: 8000
 Misc:
-  kubectl:
+  Kubectl:
     Image: "bartlettc/docker-kubectl"
     ImageTag: "latest"
-  omgwtfssl:
+  Omgwtfssl:
     Image: "bartlettc/omgwtfssl-kubernetes"
     ImageTag: "latest"
-  letsencrypt:
+  Letsencrypt:
     Image: "bartlettc/letsencrypt-acm"
     ImageTag: "kubernetes"

@@ -27,7 +27,7 @@ spec:
       restartPolicy: Never
       containers:
       - name: {{ template "fullname" . }}-{{.Values.Vault.PreInstall.ComponentName}}
-        image: "{{.Values.Misc.omgwtfssl.Image}}:{{.Values.Misc.omgwtfssl.ImageTag}}"
+        image: "{{.Values.Misc.Omgwtfssl.Image}}:{{.Values.Misc.Omgwtfssl.ImageTag}}"
         imagePullPolicy: "Always"
         env:
           - name: CA_EXPIRE

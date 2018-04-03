@@ -146,12 +146,12 @@ Additional dependencies
 
 | Parameter               | Description                           | Default                                                    |
 | ----------------------- | ----------------------------------    | ---------------------------------------------------------- |
-| `Misc.kubectl.Image` | Consul Preinstall Job container image name | `bartlettc/docker-kubectl` |
-| `Misc.kubectl.ImageTag` | Consul Preinstall Job container image tag | `latest` |
-| `Misc.omgwtfssl.Image` | Vault Preinstall Job container image name | `bartlettc/omgwtfssl-kubernetes` |
-| `Misc.omgwtfssl.ImageTag` | Vault Preinstall Job container image tag | `latest` |
-| `Misc.letsencrypt.Image` | Let's encrypt container image name | `bartlettc/letsencrypt-acm` |
-| `Misc.letsencrypt.ImageTag` | Let's encrypt container image tag | `kubernetes` |
+| `Misc.Kubectl.Image` | Consul Preinstall Job container image name (for cert/gossip-key generation) | `bartlettc/docker-kubectl` |
+| `Misc.Kubectl.ImageTag` | Consul Preinstall Job container image tag (for cert/gossip-key generation) | `latest` |
+| `Misc.Omgwtfssl.Image` | Vault Preinstall Job container image name (for self-signed cert) | `bartlettc/omgwtfssl-kubernetes` |
+| `Misc.Omgwtfssl.ImageTag` | Vault Preinstall Job container image tag (for self-signed cert) | `latest` |
+| `Misc.Letsencrypt.Image` | Let's Encrypt container image name | `bartlettc/letsencrypt-acm` |
+| `Misc.Letsencrypt.ImageTag` | Let's Encrypt container image tag | `kubernetes` |
 
 ### Helm Install
 To install the chart with the release name `vault-prod` in namespace `vault` with the `values-prod` configuration (see [helm_charts/vault](helm_charts/vault) for values definitions):
