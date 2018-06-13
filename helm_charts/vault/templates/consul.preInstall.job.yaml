@@ -51,8 +51,9 @@ spec:
         - "bash"
         - "-ec"
         - |
-          chmod -R +x /pre-install
-          cd /pre-install
+          cp -a /pre-install/. /tmp-install
+          chmod -R +x /tmp-install
+          cd /tmp-install
           ./generate-consul-tls-certs.sh
           ./create-consul-secrets.sh
           # /bin/sleep 1000
@@ -62,10 +63,14 @@ spec:
         - name: podinfo
           mountPath: /etc/podinfo
           readOnly: true
+        - name: tmp-install
+          mountPath: /tmp-install
       volumes:
         - name: pre-install
           configMap:
             name: {{ template "fullname" . }}-{{.Values.Consul.PreInstall.ComponentName}}
+        - name: tmp-install
+          emptyDir: {}
         - name: podinfo
           downwardAPI:
             items:
